@@ -2,7 +2,7 @@
 
 Scrapes lunch information from [Ilokivi](https://www.ilokivi.fi/ravintola/lounas)
 
-HTTP Request to `https://ilokivi-scraper-kjyaorxxtf.now.sh/lunch/today` will result a response like follows:
+HTTP GET Request to `https://ilokivi-scraper-kjyaorxxtf.now.sh/lunch/today` will result a response like follows:
 
 ```json
 {
@@ -26,10 +26,9 @@ HTTP Request to `https://ilokivi-scraper-kjyaorxxtf.now.sh/lunch/today` will res
         {
             "dish": "Nakkikastike",
             "allergens": "M"
-        },
-        {
-            "dish": ""
         }
     ]
 }
 ```
+
+If you want the results in the same format as [Semma](https://www.semma.fi/) ([example](https://www.semma.fi/modules/json/json/Index?costNumber=1408&language=fi)), make the request with `?semmaFormat=true`
