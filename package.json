@@ -4,6 +4,8 @@
   "description": "Scrapes ilokivi.fi for todays lunch",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/rennehir/ilokivi-scraper/issues"
   },
-  "homepage": "https://github.com/rennehir/ilokivi-scraper#readme"
+  "homepage": "https://github.com/rennehir/ilokivi-scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
