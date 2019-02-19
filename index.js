@@ -11,7 +11,9 @@ app.get('/lunch/today', async (req, res) => {
 
     try {
         const { data: htmlString } = await axios(ILOKIVI_URL)
-        const $ = cheerio.load(htmlString)
+        const $ = cheerio.load(htmlString, {
+            decodeEntities: false
+        })
 
         const day = $('.block-lunch-wrapper .col-lunch .lunch-box .head h3').text()
         const lunchContent = $('.block-lunch-wrapper .col-lunch .lunch-box .content p').html()
