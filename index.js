@@ -28,7 +28,7 @@ app.get('/lunch/today', async (req, res) => {
                 return {
                     Name: 'LOUNAS',
                     Price: '2,60',
-                    Components: [`${lunch.dish}, ${lunch.allergens}`]
+                    Components: [`${lunch.dish} (${lunch.allergens})`]
                 }
             })
 
