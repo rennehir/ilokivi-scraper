@@ -7,6 +7,8 @@ const ILOKIVI_URL = 'https://www.ilokivi.fi/ravintola/lounas'
 const app = express()
 
 app.get('/lunch/today', async (req, res) => {
+    res.set('Content-Type', 'application/json; charset=utf-8')
+
     try {
         const { data: htmlString } = await axios(ILOKIVI_URL)
         const $ = cheerio.load(htmlString)
