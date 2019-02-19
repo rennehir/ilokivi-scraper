@@ -7,8 +7,6 @@ const ILOKIVI_URL = 'https://www.ilokivi.fi/ravintola/lounas'
 const app = express()
 
 app.get('/lunch/today', async (req, res) => {
-    let lunch = ''
-
     try {
         const { data: htmlString } = await axios(ILOKIVI_URL)
         const $ = cheerio.load(htmlString)
@@ -21,10 +19,35 @@ app.get('/lunch/today', async (req, res) => {
             return { dish, allergens }
         })
 
-        res.json({
-            day,
-            lunches
-        })
+        if (req.query.semmaFormat) {
+            const LunchTime = $('.lunch-time').text()
+            const now = new Date()
+            const date = now.toISOString()
+
+            const SetMenus = lunches.map(lunch => {
+                return {
+                    Name: 'LOUNAS',
+                    Price: '2,60',
+                    Components: [`${lunch.dish}, ${lunch.allergens}`]
+                }
+            })
+
+            res.json({
+                RestaurantName: 'Ravintola Ilokivi',
+                MenusForDays: [
+                    {
+                        Date: date,
+                        LunchTime,
+                        SetMenus
+                    }
+                ]
+            })
+        } else {
+            res.json({
+                day,
+                lunches
+            })
+        }
     } catch (error) {
         console.log(error)
         res.json({
