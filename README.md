@@ -2,7 +2,7 @@
 
 Scrapes lunch information from [Ilokivi](https://www.ilokivi.fi/ravintola/lounas)
 
-HTTP GET Request to `https://ilokivi-scraper-kjyaorxxtf.now.sh/lunch/today` will result a response like follows:
+HTTP GET Request to `https://ilokivi-scraper.now.sh/lunch/today` will result a response like follows:
 
 ```json
 {
