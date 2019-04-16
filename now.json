@@ -1,5 +1,5 @@
 {
   "version": 2,
   "alias": "https://ilokivi-scraper.now.sh",
-  "builds": [{ "src": "**/*.js", "use": "@now/node" }]
+  "builds": [{ "src": "**/*.js", "use": "@now/node-server" }]
 }
