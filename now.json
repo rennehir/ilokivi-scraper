@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "alias": "https://ilokivi-scraper.now.sh",
+  "name": "ilokivi-scraper",
+  "alias": "ilokivi-scraper",
   "builds": [
     {
       "src": "index.js",

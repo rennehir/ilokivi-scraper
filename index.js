@@ -66,5 +66,3 @@ app.get("/lunch/today", async (req, res) => {
 });
 
 app.listen();
-
-module.exports = app;
