@@ -65,8 +65,6 @@ app.get("/lunch/today", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Now running");
-});
+app.listen();
 
 module.exports = app;

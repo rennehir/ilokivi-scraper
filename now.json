@@ -1,5 +1,11 @@
 {
   "version": 2,
   "alias": "https://ilokivi-scraper.now.sh",
-  "builds": [{ "src": "index.js", "use": "@now/node-server" }]
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server",
+      "config": { "maxLambdaSize": "20mb" }
+    }
+  ]
 }
