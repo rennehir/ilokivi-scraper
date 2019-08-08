@@ -22,7 +22,8 @@ app.get("/lunch/today", async (req, res) => {
     const lunchArray = lunchContent
       .trim()
       .replace(/\n/, "")
-      .split("<br>");
+      .split("<br>")
+      .filter(el => el); // Filter empty things and undefined away
     const lunches = lunchArray.map(lunch => {
       const [dish, allergens] = lunch.replace("</i>", "").split(" <i>");
       return { dish, allergens };
@@ -65,4 +66,11 @@ app.get("/lunch/today", async (req, res) => {
   }
 });
 
-app.listen();
+if (process.env.NODE_ENV === "development") {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () =>
+    console.log(`Development server running on port ${port}`)
+  );
+} else {
+  app.listen();
+}
