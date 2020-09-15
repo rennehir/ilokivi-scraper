@@ -37,7 +37,7 @@ app.get("/lunch/today", async (req, res) => {
       const SetMenus = lunches.map(lunch => {
         return {
           Name: "LOUNAS",
-          Price: "2,60",
+          Price: "2,80",
           Components: [`${lunch.dish} (${lunch.allergens})`]
         };
       });
